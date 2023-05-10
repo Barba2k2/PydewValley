@@ -1,19 +1,26 @@
 import pygame, sys
+from settings import *
+from level import Level
 
-# Pygame setup
-pygame.init()
-screen_width = 1200
-screen_height = 700
-screen = pygame.display.set_mode((screen_width, screen_height))
-clock = pygame.time.Clock()
-
-while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
+class Game:
+    def __init__(self):
+        pygame.init()
+        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        pygame.display.set_caption('Sprout Land')
+        self.clock = pygame.time.Clock()
+        self.level = Level()
         
-        screen.fill('black')
-
-        pygame.display.update()
-        clock.tick(60)
+    def run(self):
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.quit()
+                
+            dt = self.clock.tick() / 1000
+            self.level.run(dt)
+            pygame.display.update()
+            
+if __name__ == '__main__':
+    game = Game()
+    game.run()
