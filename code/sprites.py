@@ -88,3 +88,4 @@ class Tree(Generic):
                     groups = [self.apple_sprites, self.groups()[0]],
                     z = LAYERS['fruit']
                 )
+                
