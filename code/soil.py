@@ -152,7 +152,7 @@ class SoilLayer:
                     self.grid[y][x].append('P')
                     Plant(seed, [self.all_sprites, self.plant_sprites, self.collision_sprites], soil_sprite, self.check_watered)
     
-    def update_updates(self):
+    def update_plants(self):
         for plant in self.plant_sprites.sprites():
             plant.grow()
     
