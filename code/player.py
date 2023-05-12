@@ -145,7 +145,7 @@ class Player(pygame.sprite.Sprite):
 				self.seed_index = self.seed_index if self.seed_index < len(self.seeds) else 0
 				self.selected_seed = self.seeds[self.seed_index]
     
-			if keys[pygame.K_RETURN]:
+			if keys[pygame.K_RETURN]: # enter button
 				collided_interaction_sprite = pygame.sprite.spritecollide(self, self.interaction, False)
 				if collided_interaction_sprite:
 					if collided_interaction_sprite[0].name == 'Trader':
