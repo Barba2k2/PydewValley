@@ -54,7 +54,7 @@ class Particle(Generic):
         
         # white surface
         mask_surf = pygame.mask.from_surface(self.image)
-        new_surf = mask_surf.to_surfface()
+        new_surf = mask_surf.to_surface()
         new_surf.set_colorkey((0, 0, 0))
         self.image = new_surf
         
@@ -107,7 +107,7 @@ class Tree(Generic):
             self.alive = False
             self.player_add('wood')
         
-    def update(self):
+    def update(self, dt):
         if self.alive:
             self.check_death()
      

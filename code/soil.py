@@ -50,7 +50,7 @@ class SoilLayer:
                     self.grid[y][x].append('X')
                     self.create_soil_tiles()
     
-    def cretate_soil_tiles(self):
+    def create_soil_tiles(self):
         self.soil_sprites.empty()
         for index_row, row in enumerate(self.grid):
             for index_col, cell in enumerate(row):
